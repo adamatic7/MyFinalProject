@@ -11,9 +11,9 @@ public class Product {
     public String title;
     public String description;
     public Double price;
-    public String image_url;
-    public int image_width;
-    public int image_height;
+    public String imageURL;
+    public int imageWidth;
+    public int imageHeight;
 
     @Override
     public String toString(){
@@ -22,20 +22,20 @@ public class Product {
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", price='" + price + '\'' +
-                ", image_url='" + image_url + '\'' +
-                ", image_width='" + image_width + '\'' +
-                ", image_height='" + image_height + '\'' +
+                ", imageURL='" + imageURL + '\'' +
+                ", imageWidth='" + imageWidth + '\'' +
+                ", imageHeight='" + imageHeight + '\'' +
                 '}';
     }
 
-    public Product(int id, String title, String description, Double price, String image_url, int image_width, int image_height) {
+    public Product(int id, String title, String description, Double price, String imageURL, int imageWidth, int imageHeight) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.price = price;
-        this.image_url = image_url;
-        this.image_width = image_width;
-        this.image_height = image_height;
+        this.imageURL = imageURL;
+        this.imageWidth = imageWidth;
+        this.imageHeight = imageHeight;
     }
 
     public int getId() {
@@ -54,15 +54,15 @@ public class Product {
     }
 
     public String getImage_url() {
-        return image_url;
+        return imageURL;
     }
 
     public int getImage_width() {
-        return image_width;
+        return imageWidth;
     }
 
     public int getImage_height() {
-        return image_height;
+        return imageHeight;
     }
 
 
@@ -83,15 +83,15 @@ public class Product {
         this.price = price;
     }
 
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
+    public void setImage_url(String imageURL) {
+        this.imageURL = imageURL;
     }
 
-    public void setImage_width(int image_width) {
-        this.image_width = image_width;
+    public void setImage_width(int imageWidth) {
+        this.imageWidth = imageWidth;
     }
 
-    public void setImage_height(int image_height) {
-        this.image_height = image_height;
+    public void setImage_height(int imageHeight) {
+        this.imageHeight = imageHeight;
     }
 }

@@ -3,19 +3,38 @@ package com.example.myfinalproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
+import com.example.myfinalproject.db.AppDatabase;
+import com.example.myfinalproject.db.Product;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity{
+
+
+    FragmentManager fm;
+    public MyCartFragment fragProducts;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+
+        LoadFragments(new MyCartFragment(), R.id.fragment_container, "MyCartFragment");
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
@@ -25,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+    private void LoadFragments(Fragment f, int fID, String tag){
+        fm = getSupportFragmentManager();
+        fm.beginTransaction()
+                .add(fID, f, tag)
+                .commit();
+    }
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -52,4 +80,10 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     };
+
+    public Context getContext(){
+        Context mContext = new MainActivity();
+        return mContext;
+    }
+
 }

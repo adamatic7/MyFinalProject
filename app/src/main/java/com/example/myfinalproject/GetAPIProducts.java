@@ -24,6 +24,11 @@ public class GetAPIProducts extends AsyncTask<String, Integer, String> {
     public interface OnProductListComplete{
         void processProductList(Product[] products);
     }
+
+
+
+    public void setOnProductListComplete(OnProductListComplete listener){mCallBack = listener;}
+
     @Override
     protected String doInBackground(String... strings) {
 
