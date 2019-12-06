@@ -38,6 +38,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 
 public class PaypalActivity extends Activity implements MyCartFragment.SendTotal {
@@ -140,9 +141,13 @@ public class PaypalActivity extends Activity implements MyCartFragment.SendTotal
                         System.out.println(confirm.getPayment().toJSONObject()
                                 .toString(4));
 
-                        UUID uuid = UUID.randomUUID();
-                        poNumberList.add(String.valueOf(uuid));
+                        Random r = new Random();
+                        int i1 = r.nextInt(1000000 - 1) + 65;
+
+                        Log.d("Random", String.valueOf(i1));
+                      /*  poNumberList.add(String.valueOf(uuid));
                         MainActivity mContext = new MainActivity();
+
                         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext.getContext());
                         SharedPreferences.Editor spEditor = sp.edit();
 
@@ -161,13 +166,17 @@ public class PaypalActivity extends Activity implements MyCartFragment.SendTotal
 
                             spEditor.putInt("poTotal", value);
                             spEditor.commit();
+                          }  */
+                            Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                            intent.putExtra("GUID", String.valueOf(i1));
+                            startActivity(intent);
 
-                        }
 
 
-                        Intent myIntent = new Intent(PaypalActivity.this, MainActivity.class);
+
+                       // Intent myIntent = new Intent(PaypalActivity.this, MainActivity.class);
                         //myIntent.putExtra("key", value); //Optional parameters
-                        PaypalActivity.this.startActivity(myIntent);
+                        //PaypalActivity.this.startActivity(myIntent);
                         Toast.makeText(getApplicationContext(), "Order placed",
                                 Toast.LENGTH_LONG).show();
 

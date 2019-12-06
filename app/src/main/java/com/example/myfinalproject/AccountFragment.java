@@ -88,7 +88,7 @@ public class AccountFragment extends Fragment {
 
                 textArray[i] = new TextView(getContext());
                 textArray[i].setId(i+111);
-                textArray[i].setText("Name: " + name);
+                textArray[i].setText("Purchase Order: " + name);
                 textArray[i].setTextSize(20);
                 textArray[i].setPadding(20,5,5,5);
 

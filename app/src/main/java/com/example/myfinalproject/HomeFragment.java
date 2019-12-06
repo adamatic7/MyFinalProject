@@ -64,8 +64,9 @@ public class HomeFragment extends Fragment {
         //Bundle bundle = this.getArguments();
 
  //       Log.d("Bundle", bundle.toString());
-/*
 
+/*
+        //Comment out to the start
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -99,7 +100,7 @@ public class HomeFragment extends Fragment {
 
         }).start();
 
-//            product_pk = bundle.getString("PlayStation 4");
+//           product_pk = bundle.getString("PlayStation 4");
             //Log.d("Home", product_pk);
         new Thread(new Runnable() {
                     @Override
@@ -144,9 +145,11 @@ public class HomeFragment extends Fragment {
 
                 }).start();
 
-        */
-       // txtProductTitle = (TextView)root.findViewById(R.id.txtLine1);
-       // txtProductPrice = (TextView)root.findViewById(R.id.txtLine2) ;
+         */
+
+        //Comment out the next two lines
+        //txtProductTitle = (TextView)root.findViewById(R.id.txtLine1);
+        //txtProductPrice = (TextView)root.findViewById(R.id.txtLine2) ;
 
 
         return root;
